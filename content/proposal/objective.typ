@@ -1,11 +1,42 @@
 #import "/utils/todo.typ": TODO
 
 = Objective
-#TODO[ // Remove this block
-  *Proposal Objective*
-  - Define the main goals of your thesis clearly and concisely.
-  - Start with a short overview where you enumerate the goals as bullet points, using action-oriented phrasing (e.g., 1., 2., 3., ...).
-  - Avoid the gerund form for verbs (e.g., "Developing Feature XYZ") and noun phrases (e.g., "Feature XYZ Development"). Instead, use action-oriented language such as "Develop Feature XYZ", similar to how you would formulate use cases in UML use case diagrams.
-  - Ensure your goals are concrete and specific, avoiding generic statements. Clearly state what you aim to achieve.
-  - Expand on each goal in a dedicated subsection. Repeat the corresponding enumerated bullet point number to maintain consistency and provide at least two paragraphs explaining the goal. Focus on being precise and specific in your descriptions.
-]
+
+This thesis pursues four objectives: 
+
+1. *Design a JSON-Based Quiz-Question Aggregate Model*
+2. *Migrate Quiz-Question Components into JSON Columns*
+3. *Integrate the Quiz Module into OpenAPI Generation*
+4. *Evaluate the Refactored Quiz Module*
+
+
+== Design a JSON-Based Quiz-Question Aggregate Model
+- Define `QuizQuestion` as the aggregate root of its exclusively owned components.
+- Model answer options, drag items, drop locations, short-answer spots, solutions, and correct mappings as embedded components.
+- Clarify aggreate ownership, boundaries and identify information that remains relational. 
+- Introduce stable logical identifiers for JSON-embedded components.
+- Preserve component identifiers when questions are edited or components are reordered. 
+- Define references from submissions, assessments and statistics to embedded components. 
+
+== Migrate Quiz-Question Components into JSON Columns
+- Implement JSON persistence for the seven question-component relationships.
+- Support JSON persistence with both MySQL and PostgreSQL. 
+- Transfer existing questions components into JSON columns using Liquibase. 
+- Preserve existing component identifiers. during the migration. 
+- Adapt directly affected submissions, assessment  operations, and statistics counters.
+- Validate migration completeness and reference integrity trough automated tests. 
+
+== Integrate the Quiz Module into OpenAPI Generation
+- Include the quiz module in the Artemis OpenAPI workflow. 
+- Expose stable DTO-based contracts independent of the persistence model.
+- Represent polymorphic quiz-question DTOs explicitly in the OpenAPI specification.
+- Generate TypeScript-Angular models and API services. 
+- Replace manually implemented HTTP code for selected loading, creation, and update workflows.
+- Retain thin manually implemented facades where generated multipart handling is unsuitable. 
+
+== Evaluate the Refactored Quiz Module
+- Compare the existing relational implemenatation with the JSON-based implementation.
+- Measure SQL queries, joins, write operations, response times, and payload sizes. 
+- Use reproducible quiz worfklows containing all supported question types. 
+- Assess OpenAPI coverage and the remaining manually maintained web-client integration code.
+- Document the benefits, disadvantages, and limitations of both refactoring approaches. 

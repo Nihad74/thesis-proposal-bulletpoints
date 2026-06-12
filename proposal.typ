@@ -17,17 +17,18 @@
   transparency_ai_tools: include "/content/proposal/transparency_ai_tools.typ",
 )
 
-#TODO(color: red)[ // Remove this block
-  Before you start with your thesis, have a look at our guides on Outline!
-  #link("https://outline.aet.cit.tum.de/doc/proposal-ocozQUn1RU")
-]
 
 #set heading(numbering: none)
 #include "/content/proposal/abstract.typ"
 
 #set heading(numbering: "1.1")
+#pagebreak()
 #include "/content/proposal/introduction.typ"
+#pagebreak()
 #include "/content/proposal/problem.typ"
+#pagebreak()
 #include "/content/proposal/motivation.typ"
+#pagebreak()
 #include "/content/proposal/objective.typ"
+#pagebreak()
 #include "/content/proposal/schedule.typ"

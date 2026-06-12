@@ -1,16 +1,56 @@
-bruegge2004object:
-  type: book
-  title: Object Oriented Software Engineering Using UML, Patterns, and Java
+bourhis2017json:
+  type: article
+  title: "JSON: data model, query languages and schema specification"
   author:
-    - Bruegge, Bernd
-    - Dutoit, Allen H
-  date: 2009
-  publisher: Prentice Hall
+    - Bourhis, Pierre
+    - Reutter, Juan L.
+    - Suárez, Fernando
+    - Vrgoč, Domagoj
+  date: 2017
+  eprint: 1701.02221
+  archivePrefix: arXiv
+  primaryClass: cs.DB
+  url: https://arxiv.org/abs/1701.02221
 
-mustermann2020design:
-  type: thesis
-  title: "Design and Implementation of a Scalable Microservice Architecture"
-  author: Max Mustermann
-  genre: Master Thesis
-  publisher: Technical University of Munich
-  date: 2020 
+fowler2012aggregate:
+  type: article
+  title: "Aggregate Oriented Database"
+  author:
+    - Fowler, Martin
+  date: 2012-01-19
+  url: https://martinfowler.com/bliki/AggregateOrientedDatabase.html
+
+postgresql_json:
+  type: web
+  title: "PostgreSQL: JSON Types"
+  author: PostgreSQL Global Development Group
+  date: 2026
+  url: https://www.postgresql.org/docs/current/datatype-json.html
+
+edouibi2015emfrest:
+  type: article
+  title: "EMF-REST: Generation of RESTful APIs from Models"
+  author:
+    - Ed-Douibi, Hamza
+    - Cánovas Izquierdo, Javier Luis
+    - Gómez, Abel
+    - Tisi, Massimo
+    - Cabot, Jordi
+  date: 2015
+  eprint: 1504.03498
+  archivePrefix: arXiv
+  primaryClass: cs.SE
+  url: https://arxiv.org/abs/1504.03498
+
+karlsson2019quickrest:
+  type: article
+  title: "QuickREST: Property-based Test Generation of OpenAPI-Described RESTful APIs"
+  author:
+    - Karlsson, Stefan
+    - Causevic, Adnan
+    - Sundmark, Daniel
+  date: 2019
+  eprint: 1912.09686
+  archivePrefix: arXiv
+  primaryClass: cs.SE
+  url: https://arxiv.org/abs/1912.09686

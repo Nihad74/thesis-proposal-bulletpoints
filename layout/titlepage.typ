@@ -38,7 +38,7 @@
   align(center, text(font: fonts.sans, 2em, weight: 700, "Technical University of Munich"))
 
   v(5mm)
-  align(center, text(font: fonts.sans, 1.5em, weight: 100, "School of Computation, Information and Technology \n -- Informatics --"))
+  align(center, text(font: fonts.sans, 1.5em, weight: 100, "School of Computation, Information and Technology \n -- Information Systems --"))
   
   v(15mm)
 
@@ -46,10 +46,10 @@
   v(8mm)
   
 
-  align(center, text(font: fonts.sans, 2em, weight: 700, title))
+  align(center, text(font: fonts.sans, 1.7em, weight: 700, title))
   
 
-  align(center, text(font: fonts.sans, 2em, weight: 500, titleGerman))
+  align(center, text(font: fonts.sans, 1.7em, weight: 500, titleGerman))
 
   let entries = ()
   entries.push(("Author", author))
