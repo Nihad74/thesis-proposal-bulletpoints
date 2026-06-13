@@ -11,12 +11,11 @@
   - Enable future quiz-module changes without requiring synchronized manual updates across all application layers. 
 
 - *Scientific Framing*
-  - JSON provides a hierarchical data model suitable for representing nested and aggregate-oriented information #cite(<bourhis2017json>).
-  - Embedding related data can reduce relational joins but introduces trade-offs concerning referential integrity, update behavior, and querying #cite(<fowler2012aggregate>). 
-  - The suitability of relational or JSON-based persistence depends on actual access patterns and must therefore be evaluated empirically #cite(<postgresql_json>).
-  - Model-driven API generation can reduce repetitive integration work and improve consistency between system components #cite(<edouibi2015emfrest>).
-  - OpenAPI descriptions can additionally support automated validation and expose differences between documented and implemented API behavior #cite(<karlsson2019quickrest>).
-  - The Artemis quiz module provides a production-scale case study combining complex persistence relationships, polymorphic APIs, and long-lived assessment data.
+  - JSON provides a hierarchical data model suitable for representing nested and aggregate-oriented information #cite(<bourhis2020json>).
+  - Embedding and denormalization decisions should be derived from application access patterns and introduce trade-offs between query efficiency, update behavior, and data integrity #cite(<mior2017nose>). 
+  - Systems combining relational and semi-structured data require deliberate storage and query-design decisions #cite(<tahara2014sinew>).
+  - Model-driven API generation can automate repetitive implementation tasks and improve consistency between API artifacts #cite(<eddouibi2016emfrest>).
+  - Machine-readable OpenAPI descriptions enable automated testing and can reveal inconsistencies between specified and implemented API behavior #cite(<karlsson2020quickrest>).
 - *Positive Framing*
   - *Students* benefit from reliable and responsive quiz-participation workflows. 
   - *Instructors* benefit from consistent questions editing and trustworthy historical results. 

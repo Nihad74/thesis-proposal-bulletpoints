@@ -1,56 +1,85 @@
-bourhis2017json:
+bourhis2020json:
   type: article
-  title: "JSON: data model, query languages and schema specification"
+  title: "{JSON}: Data Model and Query Languages"
   author:
     - Bourhis, Pierre
     - Reutter, Juan L.
-    - Suárez, Fernando
     - Vrgoč, Domagoj
-  date: 2017
-  eprint: 1701.02221
-  archivePrefix: arXiv
-  primaryClass: cs.DB
-  url: https://arxiv.org/abs/1701.02221
+  date: 2020-03
+  page-range: 101478
+  serial-number:
+    doi: "10.1016/j.is.2019.101478"
+  parent:
+    type: periodical
+    title: Information Systems
+    volume: 89
+    publisher: Elsevier
 
-fowler2012aggregate:
+mior2017nose:
   type: article
-  title: "Aggregate Oriented Database"
+  title: "{NoSE}: Schema Design for {NoSQL} Applications"
   author:
-    - Fowler, Martin
-  date: 2012-01-19
-  url: https://martinfowler.com/bliki/AggregateOrientedDatabase.html
+    - Mior, Michael Joseph
+    - Salem, Kenneth
+    - Aboulnaga, Ashraf
+    - Liu, Rui
+  date: 2017-10
+  page-range: 2275-2289
+  serial-number:
+    doi: "10.1109/TKDE.2017.2722412"
+  parent:
+    type: periodical
+    title: IEEE Transactions on Knowledge and Data Engineering
+    volume: 29
+    issue: 10
+    publisher: IEEE
 
-postgresql_json:
-  type: web
-  title: "PostgreSQL: JSON Types"
-  author: PostgreSQL Global Development Group
-  date: 2026
-  url: https://www.postgresql.org/docs/current/datatype-json.html
-
-edouibi2015emfrest:
+tahara2014sinew:
   type: article
-  title: "EMF-REST: Generation of RESTful APIs from Models"
+  title: "Sinew: A {SQL} System for Multi-Structured Data"
+  author:
+    - Tahara, Daniel
+    - Diamond, Thaddeus
+    - Abadi, Daniel J.
+  date: 2014
+  page-range: 815-826
+  serial-number:
+    doi: "10.1145/2588555.2612183"
+  parent:
+    type: proceedings
+    title: Proceedings of the 2014 ACM SIGMOD International Conference on Management of Data
+    publisher: ACM
+
+eddouibi2016emfrest:
+  type: article
+  title: "{EMF-REST}: Generation of {RESTful APIs} from Models"
   author:
     - Ed-Douibi, Hamza
     - Cánovas Izquierdo, Javier Luis
     - Gómez, Abel
     - Tisi, Massimo
     - Cabot, Jordi
-  date: 2015
-  eprint: 1504.03498
-  archivePrefix: arXiv
-  primaryClass: cs.SE
-  url: https://arxiv.org/abs/1504.03498
+  date: 2016
+  page-range: 1446-1453
+  serial-number:
+    doi: "10.1145/2851613.2851782"
+  parent:
+    type: proceedings
+    title: Proceedings of the 31st Annual ACM Symposium on Applied Computing
+    publisher: ACM
 
-karlsson2019quickrest:
+karlsson2020quickrest:
   type: article
-  title: "QuickREST: Property-based Test Generation of OpenAPI-Described RESTful APIs"
+  title: "{QuickREST}: Property-Based Test Generation of {OpenAPI}-Described {RESTful APIs}"
   author:
     - Karlsson, Stefan
     - Causevic, Adnan
     - Sundmark, Daniel
-  date: 2019
-  eprint: 1912.09686
-  archivePrefix: arXiv
-  primaryClass: cs.SE
-  url: https://arxiv.org/abs/1912.09686
+  date: 2020
+  page-range: 131-141
+  serial-number:
+    doi: "10.1109/ICST46399.2020.00023"
+  parent:
+    type: proceedings
+    title: 2020 IEEE 13th International Conference on Software Testing, Validation and Verification
+    publisher: IEEE
