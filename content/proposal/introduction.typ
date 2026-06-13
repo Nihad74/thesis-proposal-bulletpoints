@@ -5,14 +5,14 @@
 
 - Artemis is an open-source learning management system developed at Technical University of Munich.
 
-- It supports interactive exercises, automate assessment, examinations, and learning analytics.
+- It supports interactive exercises, automated assessment, examinations, and learning analytics.
 
 - The quiz module provides three question types: 
   - Multiple-choice questions
   - Drag-and-drop questions
   - Short-answer questions
 
-- Questions are used in regular exercises, practice sessions, live quizzes, ans examinations.
+- Questions are used in regular exercises, practice sessions, live quizzes, and examinations.
 
 - The server is implemented using Java, Spring Boot, Hibernate and relational databases.
 

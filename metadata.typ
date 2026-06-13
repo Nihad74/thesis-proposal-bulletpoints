@@ -8,6 +8,6 @@
 #let author = "Nihad Tanvir Uddin"
 #let birthdate = datetime(day: 07, month: 04, year: 2004) // only necessary for registration certificate
 #let startDate = datetime(day: 1, month: 8, year: 2026)
-#let submissionDate = datetime(day: 1, month: 2, year: 2027)
-#let presentationDate = datetime(day: 1, month: 3, year: 2027)
+#let submissionDate = datetime(day: 1, month: 1, year: 2027)
+#let presentationDate = datetime(day: 1, month: 2, year: 2027)
 #let feedbacklogSubmissionDate = datetime.today()
