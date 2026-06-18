@@ -2,30 +2,10 @@
 
 = Problem
 
-- *Actors*
+The current implementation of the Artemis quiz module presents architectural challenges that directly impact its users. Students depend on fast loading times, while instructors require consistent definitions and reliable statistics. Meanwhile, developers maintaining the module must strictly preserve backward compatibility with existing historical data.
 
-  - *Students:* Participate in quizzes and examinations.
-    Depend on responsive quiz loading and reliable assessment.
+The core problem stems from the persistence model and API architecture. Currently, quiz question definitions are heavily fragmented across multiple relational tables. Specific question components like answer options are modeled as independent relational entities despite belonging exclusively to a single parent question. This causes the persistence framework to eagerly load deeply nested, irrelevant component structures during simple requests. Consequently, retrieving or updating a question becomes an overly complex transaction requiring the strict coordination of multiple entities and foreign keys.
 
-  - *Instructors:* Create and edit quiz exercises and review student performance. Depend on consistent question definitions and correctly attributed statistics.
+Furthermore, the quiz module is excluded from the Artemis OpenAPI generation workflow. Without a single source of truth, most Angular services must manually duplicate server-defined endpoints and data types.
 
-  - *Artemis developers and maintainers:* Extend the quiz module and maintain its persistence and API layers.
-    Must preserve compatibility with existing questions, submissions, and statistics.
-
-- *Core problem*
-  - Quiz questions definitions are distributed across multiple relational tables. 
-  - Question components are modeled as independent entities despite exclusively belonging to one question. 
-  - Question-component relationships are loaded eagerly, potentially retrieving complete component structures even when they are not required by the respective workflow.
-  - Persisting a question requires coordinating multiple entities, mappings, and ordered collections. 
-  - The quiz module is not included in the Artemis OpenAPI generation workflow.
-  - Most quiz-related Angular API services manually duplicate endpoint URLs and data types. 
-
-- *Negative Consequences*
-  - Loading complete questions requires additional database queries or joins.
-  - Updating questions requires multiple coordinated database operations.
-
-  - Developers must reason about a fragmented and tightly coupled domain model. 
-  - Persistence changes have a large regression surface across creation, submission, assessment, and statistics. 
-  - API changes in the server application must be propagated manually to web-client services.
-  - Differences between server and web-client contracts may only become visible during integration or runtime.
-  - Polymorphic responses and multipart requests make API maintenance particularly difficult. 
+These design decisions severely degrade system performance and maintainability. Complex SQL joins slow down read operations, while tightly coupled database write operations create a massive regression surface. On the API level, the manual propagation of server changes is highly susceptible to human error, often hiding contract discrepancies until runtime. Finally, manually maintaining client code for polymorphic responses and multipart requests makes ongoing development tedious and error-prone.

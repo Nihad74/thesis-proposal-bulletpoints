@@ -2,15 +2,14 @@
 
 = Objective
 
-This thesis pursues four objectives: 
+Building on the motivation to enhance system performance and maintainability, this thesis seeks to address the current architectural limitations by proposing a comprehensive refactoring plan for the Artemis quiz module. This approach focuses on transitioning from a fragmented relational database schema to a highly efficient JSON-based persistence model, while simultaneously modernizing the API architecture. To achieve these goals and systematically resolve the identified bottlenecks, the refactoring process will be executed and evaluated in three sequential stages:
 
-1. *Design a JSON-Based Quiz-Question Aggregate Model*
-2. *Migrate Quiz-Question Components into JSON Columns*
-3. *Integrate the Quiz Module into OpenAPI Generation*
-4. *Evaluate the Refactored Quiz Module*
+1. Refactor Domain Model to Reflect Aggregated Quiz Structures
+2. Integrate the Quiz Module into OpenAPI Generation
+3. Evaluate the Refactored Quiz Module
 
 
-== Design a JSON-Based Quiz-Question Aggregate Model
+== Refactor Domain Model to Reflect Aggregated Quiz Structures
 - Define `QuizQuestion` as the aggregate root of its exclusively owned components.
 - Model answer options, drag items, drop locations, short-answer spots, solutions, and correct mappings as embedded components.
 - Clarify aggregate ownership, boundaries, and identify information that remains relational. 

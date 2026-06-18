@@ -3,23 +3,8 @@
 
 = Motivation
 
-- *Vision*
-  - Represent each quiz question as a coherent and independently manageable domain unit. 
-  - Load and update complete question definitions without unnecessary relational operations. 
-  - Preserve the correctness and reproducibility of historical submissions and statistics. 
-  - Establish an explicit and machine-readable contract between the quiz server module and the Angular web client.
-  - Enable future quiz-module changes without requiring synchronized manual updates across all application layers. 
+The vision for this refactoring is to represent each quiz question as a coherent and independently manageable domain unit. By eliminating the need for expensive SQL joins and multiple write operations, this approach drastically reduces the database load and speeds up the retrieval and updating of complete question definitions. Concurrently, the refactoring strictly preserves the correctness and reproducibility of historical submissions and statistics. On the API level, the goal is to establish an explicit, machine-readable contract between the server and the Angular web client, enabling future modifications without requiring synchronized manual updates across application layers.
 
-- *Scientific Framing*
-  - JSON provides a hierarchical data model suitable for representing nested and aggregate-oriented information #cite(<bourhis2020json>).
-  - Embedding and denormalization decisions should be derived from application access patterns and introduce trade-offs between query efficiency, update behavior, and data integrity #cite(<mior2017nose>). 
-  - Systems combining relational and semi-structured data require deliberate storage and query-design decisions #cite(<tahara2014sinew>).
-  - Model-driven API generation can automate repetitive implementation tasks and improve consistency between API artifacts #cite(<eddouibi2016emfrest>).
-  - Machine-readable OpenAPI descriptions enable automated testing and can reveal inconsistencies between specified and implemented API behavior #cite(<karlsson2020quickrest>).
-- *Positive Framing*
-  - *Students* benefit from reliable and responsive quiz-participation workflows. 
-  - *Instructors* benefit from consistent questions editing and trustworthy historical results. 
-  - *Developers* benefit from clearer ownership boundaries within the quiz domain. 
-  - Stable component references allow the persistence model to evolve without losing historical associations. 
-  - Explicit API contracts reduce accidental coupling between server-side persistence and web-client models.
-  - Quantitative evaluation provides evidence about when JSON-based persistence is beneficial in established relational applications. 
+Scientifically, this work is framed around the transition from strictly relational schemas to semi-structured data models. JSON provides a hierarchical data model suitable for representing nested, aggregate-oriented information #cite(<bourhis2020json>). Embedding and denormalization decisions must be derived from application access patterns, introducing trade-offs between query efficiency, update behavior, and data integrity #cite(<mior2017nose>). Furthermore, combining relational and semi-structured data demands deliberate storage and query-design decisions #cite(<tahara2014sinew>). Regarding the API architecture, model-driven API generation automates repetitive tasks and improves consistency across artifacts #cite(<eddouibi2016emfrest>). Utilizing machine-readable OpenAPI descriptions also enables automated testing and reveals inconsistencies between specified and implemented behaviors #cite(<karlsson2020quickrest>).
+
+This refactoring delivers substantial positive outcomes. By significantly lowering database demands, students will experience much faster load times and highly responsive quiz-participation workflows, even during peak server usage. Instructors will similarly benefit from accelerated quiz editing and the reliable retrieval of trustworthy historical results. For developers, this transition establishes clearer ownership boundaries within the quiz domain. Stable component references allow the persistence model to evolve without breaking historical associations. Finally, explicit API contracts reduce accidental coupling between server and client models, and the quantitative evaluation will provide valuable evidence regarding the performance benefits of JSON-based persistence in established relational applications.
