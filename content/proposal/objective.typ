@@ -2,40 +2,39 @@
 
 = Objective
 
-Building on the motivation to enhance system performance and maintainability, this thesis seeks to address the current architectural limitations by proposing a comprehensive refactoring plan for the Artemis quiz module. This approach focuses on transitioning from a fragmented relational database schema to a highly efficient JSON-based persistence model, while simultaneously modernizing the API architecture. To achieve these goals and systematically resolve the identified bottlenecks, the refactoring process will be executed and evaluated in three sequential stages:
+To address the outlined limitations, this thesis proposes a comprehensive refactoring of the Artemis quiz module. The approach transitions from a fragmented relational schema to an efficient JSON-based persistence model while modernizing the API architecture. This process is executed in three stages:
 
 1. Refactor Domain Model to Reflect Aggregated Quiz Structures
-2. Integrate the Quiz Module into OpenAPI Generation
+2. Enable OpenAPI Generation for the Quiz Module
 3. Evaluate the Refactored Quiz Module
 
 
 == Refactor Domain Model to Reflect Aggregated Quiz Structures
-- Define `QuizQuestion` as the aggregate root of its exclusively owned components.
-- Model answer options, drag items, drop locations, short-answer spots, solutions, and correct mappings as embedded components.
-- Clarify aggregate ownership, boundaries, and identify information that remains relational. 
-- Introduce stable logical identifiers for JSON-embedded components.
-- Preserve component identifiers when questions are edited or components are reordered. 
-- Define references from submissions, assessments and statistics to embedded components. 
 
-== Migrate Quiz-Question Components into JSON Columns
-- Implement JSON persistence for the seven question-component relationships.
-- Support JSON persistence with both MySQL and PostgreSQL. 
-- Transfer existing question components into JSON columns using Liquibase. 
-- Preserve existing component identifiers during the migration. 
-- Adapt directly affected submissions, assessment  operations, and statistics counters.
-- Validate migration completeness and reference integrity through automated tests. 
+#figure(
+  image("../../quiz_json_visualisation.png", width: 100%),
+  caption: [Refactored JSON Aggregate Architecture]
+)
 
-== Integrate the Quiz Module into OpenAPI Generation
-- Include the quiz module in the Artemis OpenAPI workflow. 
-- Expose stable DTO-based contracts independent of the persistence model.
-- Represent polymorphic quiz-question DTOs explicitly in the OpenAPI specification.
-- Generate TypeScript-Angular models and API services. 
-- Replace manually implemented HTTP code for selected loading, creation, and update workflows.
-- Retain thin manually implemented facades where generated multipart handling is unsuitable. 
+The primary objective is redesigning the domain model by establishing the concrete question types (e.g. `MultipleChoiceQuestion`, `DragAndDropQuestion`) as aggregate roots. Specific elements like answer options or drag items will be explicitly modeled as embedded JSON components rather than independent relational entities. Stable logical identifiers will be introduced for these components to ensure long-term data integrity and preserve historical references from user submissions, assessments, and statistics.
+
+Following the conceptual redesign, JSON persistence will be implemented for all question-component relationships across MySQL and PostgreSQL. An automated Liquibase migration will safely transfer existing components into JSON columns while strictly preserving existing identifiers. Finally, all directly affected application areas will be adapted to ensure flawless functionality with the newly embedded JSON components.
+
+
+== Enable OpenAPI Generation for the Quiz Module
+#figure(
+  image("../../OpenAPI_visualization.png", width: 100%),
+  caption: [OpenAPI Generation Workflow]
+)
+The second objective integrates the quiz module into the Artemis OpenAPI workflow. To achieve this, the server will expose stable, DTO-based API contracts that are strictly independent of the underlying persistence model. A critical step involves explicitly representing the polymorphic nature of quiz-question DTOs within the OpenAPI specification.
+
+This specification will be utilized to automatically generate TypeScript-Angular models and API services. These generated artifacts will systematically replace manually implemented HTTP code for loading, creation, and update workflows, thereby reducing maintenance overhead and preventing synchronization errors. However, thin manually implemented facades will be retained only where the generated multipart handling proves unsuitable for complex file uploads.
+
+
+
+
 
 == Evaluate the Refactored Quiz Module
-- Compare the existing relational implementation with the JSON-based implementation.
-- Measure SQL queries, joins, write operations, response times, and payload sizes. 
-- Use reproducible quiz workflows containing all supported question types. 
-- Assess OpenAPI coverage and the remaining manually maintained web-client integration code.
-- Document the benefits, disadvantages, and limitations of both refactoring approaches. 
+The final objective is a comprehensive evaluation comparing the existing relational implementation against the newly developed JSON-based architecture. To ensure objective results, this comparison will utilize reproducible quiz workflows that encompass all supported question types. The evaluation will quantitatively measure key database and system performance metrics, including the number of executed SQL queries, required joins, write operations, server response times, and API payload sizes.
+
+Furthermore, the success of the API modernization will be assessed by analyzing the overall OpenAPI coverage and quantifying the amount of remaining manually maintained web-client integration code. Ultimately, the thesis will thoroughly document the practical benefits, disadvantages, and technical limitations of both the persistence refactoring and the OpenAPI integration, providing empirical evidence for the effectiveness of the chosen architectural approaches.
