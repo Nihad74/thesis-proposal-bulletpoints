@@ -27,7 +27,5 @@
 #pagebreak()
 #include "/content/proposal/problem.typ"
 #include "/content/proposal/motivation.typ"
-#pagebreak()
 #include "/content/proposal/objective.typ"
-#pagebreak()
 #include "/content/proposal/schedule.typ"

@@ -6,7 +6,6 @@ bourhis2020json:
     - Reutter, Juan L.
     - Vrgoč, Domagoj
   date: 2020-03
-  page-range: 101478
   serial-number:
     doi: "10.1016/j.is.2019.101478"
   parent:
@@ -50,6 +49,22 @@ tahara2014sinew:
     title: Proceedings of the 2014 ACM SIGMOD International Conference on Management of Data
     publisher: ACM
 
+liu2014jsondatamanagement:
+  type: article
+  title: "JSON data management: supporting schema-less development in {RDBMS}"
+  author:
+    - Liu, Z. H.
+    - Hammerschmidt, B..
+    - McMahon, D.
+  date: 2014
+  page-range: 1247-1258
+  serial-number:
+    doi: "10.1145/2588555.2595628"
+  parent:
+    type: proceedings
+    title: Proceedings of the 2014 ACM SIGMOD International Conference on Management of Data
+    publisher: ACM
+
 eddouibi2016emfrest:
   type: article
   title: "{EMF-REST}: Generation of {RESTful APIs} from Models"
@@ -73,7 +88,7 @@ karlsson2020quickrest:
   title: "{QuickREST}: Property-Based Test Generation of {OpenAPI}-Described {RESTful APIs}"
   author:
     - Karlsson, Stefan
-    - Causevic, Adnan
+    - Čaušević, Adnan
     - Sundmark, Daniel
   date: 2020
   page-range: 131-141
@@ -82,4 +97,21 @@ karlsson2020quickrest:
   parent:
     type: proceedings
     title: 2020 IEEE 13th International Conference on Software Testing, Validation and Verification
+    publisher: IEEE
+
+hosono2018empirical:
+  type: article
+  title: "An Empirical Study on the Reliability of the Web {API} Document"
+  author:
+    - Hosono, Masaki
+    - Washizaki, Hironori
+    - Fukazawa, Yoshiaki
+    - Honda, Kiyoshi
+  date: 2018
+  page-range: 715-716
+  serial-number:
+    doi: "10.1109/APSEC.2018.00103"
+  parent:
+    type: proceedings
+    title: 2018 25th Asia-Pacific Software Engineering Conference (APSEC)
     publisher: IEEE

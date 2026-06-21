@@ -2,11 +2,6 @@
 
 = Abstract
 
-- Artemis supports multiple-choice questions, drag-and-drop, and short-answer questions.
+The Artemis learning management system provides a versatile quiz module supporting multiple-choice, drag-and-drop, and short-answer questions. Currently, the sub-components of these questions are stored as independent relational entities. This fragmented architecture necessitates expensive database joins, complex persistence operations, and results in a tightly coupled domain model. Furthermore, the module relies on manually maintained API contracts, leading to error-prone synchronization between the server and the web client.
 
-- Their components are currently stored as independent relational entities, requiring multiple joins and persistence operations.
-
-- This thesis embeds question-owned components into JSON columns while preserving references from submissions and statistics through stable component identifiers.
-
-- The refactoring is evaluated regarding correctness, database performance, API-contract quality, and maintainability. 
-
+This thesis proposes a comprehensive architectural refactoring of the quiz module to address these bottlenecks. First, concrete quiz questions are redesigned as aggregate roots, embedding their exclusively owned components directly into JSON columns. This multi-model approach aims to significantly improve database query efficiency and simplify update operations while preserving historical data integrity. Second, the module is integrated into the Artemis OpenAPI workflow to automatically generate robust TypeScript-Angular clients from machine-readable contracts. Finally, the refactored architecture is quantitatively evaluated regarding its impact on database performance, API consistency, and overall system maintainability
