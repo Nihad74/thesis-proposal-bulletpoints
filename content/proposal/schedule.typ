@@ -73,5 +73,5 @@
     [Execute the final relational-versus-JSON comparison; evaluate OpenAPI integration; resolve identified regressions.],
     [3],
   ),
-  caption: [Iteration plan with deliverables and associated objectives.],
+  caption: [Iteration Plan With Deliverables and Associated Objectives.],
 )
